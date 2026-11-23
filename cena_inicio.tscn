@@ -1,0 +1,40 @@
+[gd_scene format=3 uid="uid://bea7gind4ls22"]
+
+[ext_resource type="Texture2D" uid="uid://e0pcemss2s0l" path="res://tela_inicial.jpg" id="1_7k3t1"]
+[ext_resource type="Script" uid="uid://x745lbexp3qj" path="res://script_inicio.gd" id="1_hnhcb"]
+[ext_resource type="AudioStream" uid="uid://bpw4776igg1jg" path="res://Sons/Música_introdução.mp3" id="3_cd34d"]
+
+[node name="Inicio" type="Node2D" unique_id=919323194]
+script = ExtResource("1_hnhcb")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1102875953]
+position = Vector2(580, 322)
+scale = Vector2(1.1484374, 1.1538463)
+texture = ExtResource("1_7k3t1")
+
+[node name="ButtonIniciar" type="Button" parent="." unique_id=1526919651]
+offset_left = 457.0
+offset_top = 294.0
+offset_right = 702.0
+offset_bottom = 350.0
+
+[node name="Buttonconfig" type="Button" parent="." unique_id=1674107216]
+offset_left = 461.0
+offset_top = 358.0
+offset_right = 700.0
+offset_bottom = 408.0
+
+[node name="ButtonSair" type="Button" parent="." unique_id=1114065236]
+offset_left = 461.0
+offset_top = 413.0
+offset_right = 706.0
+offset_bottom = 469.0
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1549927463]
+stream = ExtResource("3_cd34d")
+volume_db = -24.0
+autoplay = true
+
+[connection signal="pressed" from="ButtonIniciar" to="." method="iniciar_jogo"]
+[connection signal="pressed" from="Buttonconfig" to="." method="ir_para_configuracoes"]
+[connection signal="pressed" from="ButtonSair" to="." method="sair"]

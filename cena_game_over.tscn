@@ -1,0 +1,33 @@
+[gd_scene format=3 uid="uid://dewhmb7o3v5ih"]
+
+[ext_resource type="Script" uid="uid://qw5c65ecu5v5" path="res://script_game_over.gd" id="1_p4wjp"]
+[ext_resource type="Texture2D" uid="uid://c5eipvhseow1a" path="res://GameOver.jpg" id="1_s1hed"]
+[ext_resource type="AudioStream" uid="uid://c5tkt101vfydc" path="res://Sons/Música_tela_game_over.mp3" id="3_niwnu"]
+
+[node name="GameOver" type="Node2D" unique_id=240354240]
+script = ExtResource("1_p4wjp")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1652592420]
+position = Vector2(573.5, 322.99997)
+scale = Vector2(0.84275365, 0.8723404)
+texture = ExtResource("1_s1hed")
+
+[node name="ButtonReiniciar" type="Button" parent="." unique_id=1068200205]
+offset_left = 349.0
+offset_top = 330.0
+offset_right = 545.0
+offset_bottom = 409.0
+
+[node name="ButtonSair" type="Button" parent="." unique_id=560030873]
+offset_left = 610.0
+offset_top = 327.0
+offset_right = 809.0
+offset_bottom = 415.0
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1074695979]
+stream = ExtResource("3_niwnu")
+volume_db = -8.0
+autoplay = true
+
+[connection signal="pressed" from="ButtonReiniciar" to="." method="reiniciar"]
+[connection signal="pressed" from="ButtonSair" to="." method="sair"]
